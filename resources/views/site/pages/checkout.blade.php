@@ -1,9 +1,9 @@
 @extends('site.app')
 @section('title', 'Checkout')
 @section('content')
-    <section class="section-pagetop bg-dark">
+    <section class="section-pagetop bg">
         <div class="container clearfix">
-            <h2 class="title-page">Checkout</h2>
+            <h2 class="title-page text-dark-text-center">Checkout</h2>
         </div>
     </section>
     <section class="section-content bg padding-y">

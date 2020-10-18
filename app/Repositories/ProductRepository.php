@@ -132,4 +132,14 @@ class ProductRepository extends BaseRepository implements ProductContract
 
         return $product;
     }
+
+    public function getTrending(){
+       return  Product::orderBy('created_at')->take(4)->get();
+    }
+    public function getTopSales(){
+
+    }
+    public function getHotProducts(){
+
+    }
 }

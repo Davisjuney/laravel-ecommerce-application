@@ -1,7 +1,7 @@
 <header class="section-header">
-    <section class="header-main">
+    <section class="header-main position-absolute w-100" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-center bg-transparent">
                 <div class="col-lg-3">
                     <div class="brand-wrap">
                         <a href="{{ url('/') }}">
@@ -22,28 +22,39 @@
                     </form>
                 </div>
                 <div class="col-lg-3 col-sm-6">
-                    <div class="widgets-wrap d-flex justify-content-end">
+                    <div class="widgets-wrap d-flex justify-content-center">
                         <div class="widget-header">
                             <a href="{{ route('checkout.cart') }}" class="icontext">
                                 <div class="icon-wrap icon-xs bg2 round text-secondary"><i
                                         class="fa fa-shopping-cart"></i></div>
-                                <div class="text-wrap">
-                                    <small>{{ $cartCount }} items</small>
+                                <div class="text-wrap text-white">
+                                    {{ $cartCount }} items
                                 </div>
                             </a>
                         </div>
                         @guest
                             <div class="widget-header">
-                                <a href="{{ route('login') }}" class="ml-3 icontext">
-                                    <div class="icon-wrap icon-xs bg-primary round text-white"><i class="fa fa-user"></i></div>
-                                    <div class="text-wrap"><span>Login</span></div>
-                                </a>
-                            </div>
-                            <div class="widget-header">
-                                <a href="{{ route('register') }}" class="ml-3 icontext">
-                                    <div class="icon-wrap icon-xs bg-success round text-white"><i class="fa fa-user"></i></div>
-                                    <div class="text-wrap"><span>Register</span></div>
-                                </a>
+                                <div class="icon-wrap icon-xs bg2 round text-secondary"><i
+                                        class="fa fa-user-plus"></i></div>
+                                <div class="btn-group text-wrap">
+                                    <a href="#" class="dropdown-toggle text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Join us
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <div class="widget-header dropdown-item" style="width: 90%;">
+                                            <a href="{{ route('login') }}" class="ml-3 icontext">
+                                                <div class="icon-wrap icon-xs bg-primary round text-white"><i class="fa fa-user"></i></div>
+                                                <div class="text-wrap text-secondary"><span>Login</span></div>
+                                            </a>
+                                        </div>
+                                        <div class="widget-header dropdown-item" style="width: 90%;">
+                                            <a href="{{ route('register') }}" class="ml-3 icontext">
+                                                <div class="icon-wrap icon-xs bg-success round text-white"><i class="fa fa-user"></i></div>
+                                                <div class="text-wrap text-secondary"><span>Register</span></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         @else
                             <ul class="navbar-nav ml-auto">
@@ -70,5 +81,4 @@
             </div>
         </div>
     </section>
-    @include('site.partials.nav')
 </header>

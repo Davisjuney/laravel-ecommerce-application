@@ -1,11 +1,13 @@
 @extends('site.app')
 @section('title', $product->name)
 @section('content')
-    <section class="section-pagetop bg-dark">
+
+    <section class="section-pagetop bg">
         <div class="container clearfix">
-            <h2 class="title-page">{{ $product->name }}</h2>
+            <h2 class="title-page text-dark text-center">{{ $product->name }}</h2>
         </div>
     </section>
+
     <section class="section-content bg padding-y border-top" id="site">
         <div class="container">
             <div class="row">
@@ -16,9 +18,11 @@
                 </div>
             </div>
             <div class="row">
+
                 <div class="col-md-12">
                     <div class="card">
                         <div class="row no-gutters">
+                            
                             <aside class="col-sm-5 border-right">
                                 <article class="gallery-wrap">
                                     @if ($product->images->count() > 0)
@@ -47,15 +51,18 @@
                                     @endif
                                 </article>
                             </aside>
+                            
                             <aside class="col-sm-7">
                                 <article class="p-5">
                                     <h3 class="title mb-3">{{ $product->name }}</h3>
+                                    
                                     <dl class="row">
                                         <dt class="col-sm-3">SKU</dt>
                                         <dd class="col-sm-9">{{ $product->sku }}</dd>
                                         <dt class="col-sm-3">Weight</dt>
                                         <dd class="col-sm-9">{{ $product->weight }}</dd>
                                     </dl>
+                                    
                                     <div class="mb-3">
                                         @if ($product->sale_price > 0)
                                             <var class="price h3 text-danger">
@@ -68,40 +75,47 @@
                                             </var>
                                         @endif
                                     </div>
+                                    
+
                                     <hr>
+
                                     <form action="{{ route('product.add.cart') }}" method="POST" role="form" id="addToCart">
                                         @csrf
+                                        {{-- bug is here --}}
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <dl class="dlist-inline">
                                                     @foreach($attributes as $attribute)
-                                                        @php
-                                                            if ($product->$attributes->count() > 0) {
-                                                                $attributeCheck = in_array($attribute->id, $product->attributes->pluck('attribute_id')->toArray())
-                                                            } else {
-                                                                $attributeCheck = [];
-                                                            }
-                                                        @endphp
-                                                        @if ($attributeCheck)
-                                                            <dt>{{ $attribute->name }}: </dt>
-                                                            <dd>
-                                                                <select class="form-control form-control-sm option" style="width:180px;" name="{{ strtolower($attribute->name ) }}">
-                                                                    <option data-price="0" value="0"> Select a {{ $attribute->name }}</option>
-                                                                    @foreach($product->attributes as $attributeValue)
-                                                                        @if ($attributeValue->attribute_id == $attribute->id)
-                                                                            <option
-                                                                                data-price="{{ $attributeValue->price }}"
-                                                                                value="{{ $attributeValue->value }}"> {{ ucwords($attributeValue->value . ' +'. $attributeValue->price) }}
-                                                                            </option>
-                                                                        @endif
-                                                                    @endforeach
-                                                                </select>
-                                                            </dd>
+                                                        
+                                                    
+                                                        @if ($product->attributes->count() > 0) 
+                                                            {{$attributeCheck = in_array($attribute->id, $product->attributes->pluck('attribute_id')->toArray())}}
+                                                        @else
+                                                            $attributeCheck = [];
+                                                        
+                                                            @if ($attributeCheck)
+                                                                <dt>{{ $attribute->name }}: </dt>
+                                                                <dd>
+                                                                    <select class="form-control form-control-sm option" style="width:180px;" name="{{ strtolower($attribute->name ) }}">
+                                                                        <option data-price="0" value="0"> Select a {{ $attribute->name }}</option>
+                                                                        @foreach($product->attributes as $attributeValue)
+                                                                            @if ($attributeValue->attribute_id == $attribute->id)
+                                                                                <option
+                                                                                    data-price="{{ $attributeValue->price }}"
+                                                                                    value="{{ $attributeValue->value }}"> {{ ucwords($attributeValue->value . ' +'. $attributeValue->price) }}
+                                                                                </option>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </select>
+                                                                </dd>
+                                                            @endif
                                                         @endif
+                                                        
                                                     @endforeach
                                                 </dl>
                                             </div>
                                         </div>
+                
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -115,6 +129,7 @@
                                                 </dl>
                                             </div>
                                         </div>
+
                                         <hr>
                                         <button type="submit" class="btn btn-success"><i class="fas fa-shopping-cart"></i> Add To Cart</button>
                                     </form>
@@ -123,6 +138,7 @@
                         </div>
                     </div>
                 </div>
+                {{--cleared --}}
                 <div class="col-md-12">
                     <article class="card mt-4">
                         <div class="card-body">

@@ -4,41 +4,39 @@
         <section class="footer-top padding-top">
             <div class="row">
                 <aside class="col-sm-3 col-md-3 white">
-                    <h5 class="title">Customer Services</h5>
+                    <h6 class="title">Customer Services</h6>
                     <ul class="list-unstyled">
-                        <li> <a href="#">Help center</a></li>
-                        <li> <a href="#">Money refund</a></li>
-                        <li> <a href="#">Terms and Policy</a></li>
-                        <li> <a href="#">Open dispute</a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter">center</a><li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter">Money refund</a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter">Terms and Policy</a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter">Open dispute</a></li>
                     </ul>
                 </aside>
                 <aside class="col-sm-3  col-md-3 white">
-                    <h5 class="title">My Account</h5>
+                    <h6 class="title">My Account</h6>
                     <ul class="list-unstyled">
-                        <li> <a href="#"> User Login </a></li>
-                        <li> <a href="#"> User register </a></li>
-                        <li> <a href="#"> Account Setting </a></li>
-                        <li> <a href="#"> My Orders </a></li>
-                        <li> <a href="#"> My Wishlist </a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter"> User Login </a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter"> User register </a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter"> Account Setting </a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter"> My Orders </a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter"> My Wishlist </a></li>
                     </ul>
                 </aside>
                 <aside class="col-sm-3  col-md-3 white">
                     <h5 class="title">About</h5>
                     <ul class="list-unstyled">
-                        <li> <a href="#"> Our history </a></li>
-                        <li> <a href="#"> How to buy </a></li>
-                        <li> <a href="#"> Delivery and payment </a></li>
-                        <li> <a href="#"> Advertice </a></li>
-                        <li> <a href="#"> Partnership </a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter"> Our history </a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter"> How to buy </a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter"> Delivery and payment </a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter"> Advertice </a></li>
+                        <li> <a href="#" class="text-secondary font-weight-lighter"> Partnership </a></li>
                     </ul>
                 </aside>
                 <aside class="col-sm-3">
                     <article class="white">
                         <h5 class="title">Contacts</h5>
                         <p>
-                            <strong>Phone: </strong> +123456789
-                            <br>
-                            <strong>Fax:</strong> +123456789
+                            <strong class="text-secondary font-weight-lighter">Phone: </strong> +123456789
                         </p>
 
                         <div class="btn-group white">
@@ -57,20 +55,14 @@
             <!-- row.// -->
             <br>
         </section>
-        <section class="footer-bottom row border-top-white">
-            <div class="col-sm-6">
-                <p class="text-white-50"> Made with
-                    <3 <br> by Vosidiy M.</p>
-            </div>
-            <div class="col-sm-6">
-                <p class="text-md-right text-white-50">
-                    Copyright &copy
-                    <br>
-                    <a href="http://bootstrap-ecommerce.com" class="text-white-50">Bootstrap-ecommerce UI kit</a>
-                </p>
-            </div>
-        </section>
-        <!-- //footer-top -->
+
+        <div class="my-4">
+            <hr class="bg-white text-sm-center">
+        </div>
+        <div class="text-left text-sm-center text-white-50">
+            Copyright &copy
+            <a href="Sindavisigiri@gmail.com" class="text-white-50"> 2020 Smart Tech</a>
+        </div>
     </div>
     <!-- //container -->
 </footer>

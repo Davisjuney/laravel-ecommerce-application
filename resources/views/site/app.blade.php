@@ -7,8 +7,12 @@
     <title>@yield('title') - {{ config('app.name') }}</title>
     @include('site.partials.styles')
 </head>
-<body>
-@include('site.partials.header')
+<body>   
+@yield('hero')
+@section('header')
+    @include('site.partials.header')
+@show 
+
 @yield('content')
 @include('site.partials.footer')
 @include('site.partials.scripts')

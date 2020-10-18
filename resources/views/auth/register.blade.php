@@ -1,9 +1,9 @@
 @extends('site.app')
 @section('title', 'Register')
 @section('content')
-    <section class="section-pagetop bg-dark">
+    <section class="section-pagetop bg">
         <div class="container clearfix">
-            <h2 class="title-page">Register</h2>
+            <h2 class="title-page text-dark text-center">Register</h2>
         </div>
     </section>
     <section class="section-content bg padding-y">
